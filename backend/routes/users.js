@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
 const User = require("../models/User");
+// require("dotenv").config();
 // const connectDB = require("../dbConnect");
 router.use(express.json());
 
@@ -16,9 +17,8 @@ router.use(express.json());
 //     console.log(error);
 //   })
 //  });
-
-// console.log(process.env.MONGO_URL);
- mongoose.connect("mongodb+srv://cfg1:XHZefcwjgNF0CKRK@cluster0.d6uhqlp.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://cfg1:XHZefcwjgNF0CKRK@cluster0.d6uhqlp.mongodb.net/?retryWrites=true&w=majority");
+ 
 
 
 router.post("/", async function (req, res, next) {

@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
+
 // var connectDB = require("../dbConnect") 
 
 /* GET home page. */
+
 const connectDB = async () => {
   try {
     // Replace 'mongodb://localhost/phone_auth' with your MongoDB connection string
-    await mongoose.connect(process.env.MONGO_URL, {
+    await mongoose.connect(process.environ.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
