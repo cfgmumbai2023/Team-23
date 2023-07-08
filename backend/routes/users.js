@@ -1,9 +1,44 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const mongoose = require("mongoose");
+const User = require("../models/User");
+// const connectDB = require("../dbConnect");
+router.use(express.json());
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+//  mongoose.connect(process.env.MONGO_URL)
+//  .then(() => {
+//   console.log("Connected to mongodb")
+//   app.listen(4000, () => {
+//     console.log("Node api")
+//   }).catch((error) =>{
+//     console.log(error);
+//   })
+//  });
+
+// console.log(process.env.MONGO_URL);
+ mongoose.connect("mongodb+srv://cfg1:XHZefcwjgNF0CKRK@cluster0.d6uhqlp.mongodb.net/?retryWrites=true&w=majority");
+
+
+router.post("/", async function (req, res, next) {
+  const { name, email, password } = req.body;
+  try {
+    const userDoc = await User.create(req.body);
+    res.status(200).json(userDoc);
+  } catch (e) {
+    res.status(422).json(e);
+  }
+});
+
+router.get("/:id", async function (req, res, next) {
+  try {
+    const {id} = req.params;
+    const userDoc = await User.findById(id );
+    res.json(userDoc);
+  } catch (e) {
+    res.status(422).json(e);
+  }
 });
 
 module.exports = router;
