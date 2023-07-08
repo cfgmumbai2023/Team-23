@@ -14,6 +14,7 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.2",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "usetube": "^2.2.7"
   }
 }
