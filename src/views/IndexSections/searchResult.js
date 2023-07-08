@@ -25,6 +25,9 @@ import { Button, Container, Row, Col,   FormGroup,
   InputGroup,
 } from "reactstrap";
 
+import DemoNavbar from "components/Navbars/DemoNavbar";
+import CardsFooter from "components/Footers/CardsFooter.js";
+
 import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
  
 // ...
@@ -84,18 +87,11 @@ const options3 = [
 
 
 
-class Hero extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      searchState: '',
-    };
-
-  }
+class searchResult extends React.Component {
   render() {
-
     return (
       <>
+      <DemoNavbar />
         <div className="position-relative">
           {/* Hero for FREE version */}
           <section className="section section-hero section-shaped">
@@ -121,7 +117,7 @@ class Hero extends React.Component {
                     //focused: this.state.searchFocused,
                   })}
                 >
-                  <InputGroup className="mb-4">
+                  <InputGroup className="mb-1">
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
                         <i className="ni ni-zoom-split-in" />
@@ -132,67 +128,13 @@ class Hero extends React.Component {
                       type="text"
                       onFocus={(e) => this.setState({ searchFocused: true })}
                       onBlur={(e) => this.setState({ searchFocused: false })}
-                      // onChange={(e) =>  }
                     />
                   </InputGroup>
                 </FormGroup>
-
-                
-                  
-                  
-                   
-                    {/* <img
-                      alt="..."
-                      className="img-fluid"
-                      src={require("assets/img/brand/argon-react-white.png")}
-                      style={{ width: "200px" }}
-                    /> */}
-                    {/*
-                    <p className="lead text-white">
-                      A beautiful Design System for Bootstrap 4. It's Free and
-                      Open Source.
-                    </p>
-                    <div className="btn-wrapper mt-5">
-                      <Button
-                        className="btn-white btn-icon mb-3 mb-sm-0"
-                        color="default"
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        size="lg"
-                      >
-                        <span className="btn-inner--icon mr-1">
-                          <i className="ni ni-cloud-download-95" />
-                        </span>
-                        <span className="btn-inner--text">Download React</span>
-                      </Button>{" "}
-                      <Button
-                        className="btn-icon mb-3 mb-sm-0"
-                        color="github"
-                        href="https://github.com/creativetimofficial/argon-design-system-react"
-                        size="lg"
-                        target="_blank"
-                      >
-                        <span className="btn-inner--icon mr-1">
-                          <i className="fa fa-github" />
-                        </span>
-                        <span className="btn-inner--text">
-                          <span className="text-warning mr-1">Star us</span>
-                          on Github
-                        </span>
-                      </Button>
-                    </div>
-                     */}
-                     {/* <div className="mt-5">
-                      <small className="text-white font-weight-bold mb-0 mr-2">
-                        *proudly coded by
-                      </small>
-                      <p className="text-white font-weight-bold mb-0 mr-2">
-                        Team 23:)
-                      </p>
-                    </div> */}
                   </Col>
                 </Row>
                 <Row className="align-items-center justify-content-center">
-                <Col className="text-center mb-4" md="4">
+                  <Col className="text-center mb-4" md="4">
                   <ReactMultiSelectCheckboxes options={options1} />
                   </Col>
                   <Col className="text-center mb-4" md="4">
@@ -203,7 +145,6 @@ class Hero extends React.Component {
                   </Col>
                 </Row>
                 <Row className="align-items-center justify-content-center mt-4">
-                
                 <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
@@ -214,84 +155,50 @@ class Hero extends React.Component {
                           <span className="btn-inner--text">Submit Search</span>
                         </Button>
                 </Row>
-                
-                <Row className="align-items-center justify-content-center">
-                  
-                  
-                  
-                  <Col className="text-center" lg="6">
-
-                     <div className="mt-5">
-                      <small className="text-white font-weight-bold mb-0 mr-2">
-                        *proudly coded by
-                      </small>
-                      <p className="text-white font-weight-bold mb-0 mr-2">
-                        Team 23:)
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
               </div>
-              
             </Container>
-            
-            {/* SVG separator */}
-            {/* <div className="separator separator-bottom separator-skew zindex-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-              >
-                <polygon
-                  className="fill-black"
-                  points="2560 0 2560 100 0 100"
-                />
-              </svg>
-            </div> */}
           </section>
         </div>
-        
         <div className="position-relative">
-              <section className="section section-shaped" style={{maxWidth:'80vw', margin:'auto',maxHeight:'20px !important',overflow:'scroll'}}>
-              <table class="table" style={{textAlign:'center'}}>
-              <thead>
-                  <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Tags</th>
-                  <th scope="col">Link</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                  <th scope="row">1</th>
-                  <td>Class 10th geography plants video</td>
-                  <td>Social Science</td>
-                  <td>https:localhost/8001</td>
-                  </tr>
-                  <tr>
-                  <th scope="row">2</th>
-                  <td>Class 12th physics refraction video</td>
-                  <td>Physics</td>
-                  <td>https:localhost/8002</td>
-                  </tr>
-                  <tr>
-                  <th scope="row">3</th>
-                  <td>Best video english synonyms</td>
-                  <td>English</td>
-                  <td>https:localhost/8003</td>
-                  </tr>
-                  
-              </tbody>
-              </table>
-              </section>
-              </div>
+        <section className="section section-shaped" style={{maxWidth:'80vw', margin:'auto',maxHeight:'20px !important',overflow:'scroll'}}>
+        <table class="table" style={{textAlign:'center'}}>
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Tags</th>
+            <th scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <td>Class 10th geography plants video</td>
+            <td>Social Science</td>
+            <td>https:localhost/8001</td>
+            </tr>
+            <tr>
+            <th scope="row">2</th>
+            <td>Class 12th physics refraction video</td>
+            <td>Physics</td>
+            <td>https:localhost/8002</td>
+            </tr>
+            <tr>
+            <th scope="row">3</th>
+            <td>Best video english synonyms</td>
+            <td>English</td>
+            <td>https:localhost/8003</td>
+            </tr>
+            
+        </tbody>
+        </table>
+        </section>
+        </div>
+        <CardsFooter />
       </>
     );
   }
 }
+//Now i want my table to only be displayed after the person hits the submit button. How can i modify my code to do this?
 
-export default Hero;
+export default searchResult;

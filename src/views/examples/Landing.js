@@ -19,6 +19,9 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+
 // reactstrap components
 import {
   Badge,
@@ -36,6 +39,7 @@ import {
   Col,
 } from "reactstrap";
 
+
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
@@ -50,6 +54,46 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+  constructor() {
+    super();
+    this.state = {
+      show1: false,
+      show2: false,
+      show3: false
+    };
+    this.showModal1 = this.showModal1.bind(this);
+    this.hideModal1 = this.hideModal1.bind(this);
+    this.showModal2 = this.showModal2.bind(this);
+    this.hideModal2 = this.hideModal2.bind(this);
+    this.showModal3 = this.showModal3.bind(this);
+    this.hideModal3 = this.hideModal3.bind(this);
+  }
+
+  showModal1 = () => {
+    this.setState({ show1: true });
+  };
+
+  hideModal1 = () => {
+    this.setState({ show1: false });
+  };
+
+  showModal2 = () => {
+    this.setState({ show2: true });
+  };
+
+  hideModal2 = () => {
+    this.setState({ show2: false });
+  };
+
+  showModal3 = () => {
+    this.setState({ show3: true });
+  };
+
+  hideModal3 = () => {
+    this.setState({ show3: false });
+  };
+
   render() {
     return (
       <>
@@ -108,8 +152,8 @@ class Landing extends React.Component {
                             Download React
                           </span>
                         </Button>
-                      </div> 
-                    </Col> */}
+                      </div>  */}
+                    {/* </Col>  */}
                   </Row>
                 </div>
               </Container>
@@ -151,7 +195,6 @@ class Landing extends React.Component {
                             4 that includes the most important components and
                             features.
                           </p> */}
-                          <div>
                             <Badge color="primary" pill className="mr-1">
                               design
                             </Badge>
@@ -161,17 +204,19 @@ class Landing extends React.Component {
                             <Badge color="primary" pill className="mr-1">
                               creative
                             </Badge>
-                          </div>
                           <Button
                             className="mt-4"
                             color="primary"
                             href="#pablo"
-                            onClick={(e) => e.preventDefault()}
+                            onClick={this.showModal1}
                           >
                             Learn more
                           </Button>
                         </CardBody>
                       </Card>
+                      <Modal open={this.state.show1} onClose={this.hideModal1} center>
+                        <h2>Simple centered modal</h2>
+                      </Modal>
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -202,12 +247,34 @@ class Landing extends React.Component {
                             className="mt-4"
                             color="success"
                             href="#pablo"
-                            onClick={(e) => e.preventDefault()}
+                            onClick={this.showModal2}
                           >
                             Learn more
                           </Button>
                         </CardBody>
                       </Card>
+                      <Modal open={this.state.show2} onClose={this.hideModal2} center>
+                      <form>
+
+<div className="form-group">
+  <label for="Name">Email</label>
+  <input type="email" className="form-control" id="Email" placeholder="your name" />
+</div>
+<div className="form-group">
+  <label for="Subject">Subject</label>
+  <input type="text" className="form-control" id="class" placeholder="Subject" />
+</div>
+
+<div className="form-group">
+  <label for="language">Language</label>
+  <input type="text" className="form-control" id="School" placeholder="language" />
+</div>
+  
+
+
+<button type="submit" className="btn btn-primary">Create Video</button>
+</form>
+                      </Modal>
                     </Col>
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
@@ -238,12 +305,35 @@ class Landing extends React.Component {
                             className="mt-4"
                             color="warning"
                             href="#pablo"
-                            onClick={(e) => e.preventDefault()}
+                            onClick={this.showModal3}
                           >
-                            Learn more
+                            Login
                           </Button>
                         </CardBody>
                       </Card>
+                      <Modal open={this.state.show3} onClose={this.hideModal3} center>
+                      <form>
+
+<div className="form-group">
+  <label for="Name">Name</label>
+  <input type="text" className="form-control" id="Name" placeholder="your name" />
+</div>
+<div className="form-group">
+  <label for="Subject">Subject</label>
+  <input type="text" className="form-control" id="class" placeholder="Subject" />
+</div>
+
+<div className="form-group">
+  <label for="language">Language</label>
+  <input type="text" className="form-control" id="School" placeholder="language" />
+</div>
+  
+
+
+<button type="submit" className="btn btn-primary">Create Video</button>
+</form>
+                        {/* <h2>Simple centered modal</h2> */}
+                      </Modal>
                     </Col>
                   </Row>
                 </Col>

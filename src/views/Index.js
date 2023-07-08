@@ -57,7 +57,7 @@ class Index extends React.Component {
       <>
         <DemoNavbar />
         <main ref="main">
-          <Hero style={{zIndex:'1'}}/>
+          <Hero/>
           {/* <Buttons />
           <Inputs />
           <section className="section">
