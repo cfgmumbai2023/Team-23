@@ -36,7 +36,7 @@ import {
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
 class Register extends React.Component {
   componentDidMount() {
@@ -194,7 +194,7 @@ class Register extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <CardsFooter />
       </>
     );
   }
