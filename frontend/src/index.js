@@ -26,7 +26,8 @@ import "assets/scss/argon-design-system-react.scss?v1.1.0";
 import Index from "views/Index.js";
 import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
-import Profile from "views/examples/Profile.js";
+import CreatorProfile from "views/examples/CreatorProfile";
+import LearnerProfile from "views/examples/LearnerProfile";
 import Register from "views/examples/Register.js";
 import SearchResult from "views/IndexSections/searchResult";
 
@@ -38,7 +39,8 @@ root.render(
       <Route path="/" exact element={<Index />} />
       <Route path="/landing-page" exact element={<Landing />} />
       <Route path="/login-page" exact element={<Login />} />
-      <Route path="/profile-page" exact element={<Profile />} />
+      <Route path="/creator-profile" exact element={<CreatorProfile />} />
+      <Route path="/learner-profile" exact element={<LearnerProfile />} />
       <Route path="/register-page" exact element={<Register />} />
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path="/search-result" exact element={<SearchResult/>} />
