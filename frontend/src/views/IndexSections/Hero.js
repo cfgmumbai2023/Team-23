@@ -24,6 +24,7 @@ import { Button, Container, Row, Col,   FormGroup,
   InputGroupText,
   InputGroup,
 } from "reactstrap";
+import SearchBar from "components/SearchBar";
 
 // import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
  
@@ -121,7 +122,7 @@ class Hero extends React.Component {
                     //focused: this.state.searchFocused,
                   })}
                 >
-                  <InputGroup className="mb-4">
+                  {/* <InputGroup className="mb-4">
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
                         <i className="ni ni-zoom-split-in" />
@@ -132,9 +133,10 @@ class Hero extends React.Component {
                       type="text"
                       onFocus={(e) => this.setState({ searchFocused: true })}
                       onBlur={(e) => this.setState({ searchFocused: false })}
-                      // onChange={(e) =>  }
+                      
                     />
-                  </InputGroup>
+                  </InputGroup> */}
+                  <SearchBar/>
                 </FormGroup>
 
                 
