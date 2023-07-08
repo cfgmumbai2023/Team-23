@@ -28,7 +28,7 @@ import { Button, Container, Row, Col,   FormGroup,
 import DemoNavbar from "components/Navbars/DemoNavbar";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
+// import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
  
 // ...
 const options1 = [
@@ -134,7 +134,7 @@ class searchResult extends React.Component {
                   </Col>
                 </Row>
                 <Row className="align-items-center justify-content-center">
-                  <Col className="text-center mb-4" md="4">
+                  {/* <Col className="text-center mb-4" md="4">
                   <ReactMultiSelectCheckboxes options={options1} />
                   </Col>
                   <Col className="text-center mb-4" md="4">
@@ -142,7 +142,7 @@ class searchResult extends React.Component {
                   </Col>
                   <Col className="text-center mb-4" md="4">
                   <ReactMultiSelectCheckboxes options={options3} />
-                  </Col>
+                  </Col> */}
                 </Row>
                 <Row className="align-items-center justify-content-center mt-4">
                 <Button

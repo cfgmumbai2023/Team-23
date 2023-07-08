@@ -25,7 +25,7 @@ import { Button, Container, Row, Col,   FormGroup,
   InputGroup,
 } from "reactstrap";
 
-import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
+// import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
  
 // ...
 const options1 = [
@@ -192,7 +192,7 @@ class Hero extends React.Component {
                   </Col>
                 </Row>
                 <Row className="align-items-center justify-content-center">
-                <Col className="text-center mb-4" md="4">
+                {/* <Col className="text-center mb-4" md="4">
                   <ReactMultiSelectCheckboxes options={options1} />
                   </Col>
                   <Col className="text-center mb-4" md="4">
@@ -200,7 +200,7 @@ class Hero extends React.Component {
                   </Col>
                   <Col className="text-center mb-4" md="4">
                   <ReactMultiSelectCheckboxes options={options3} />
-                  </Col>
+                  </Col> */}
                 </Row>
                 <Row className="align-items-center justify-content-center mt-4">
                 
