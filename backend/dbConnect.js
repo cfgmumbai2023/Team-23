@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
-// var connectDB = require("../dbConnect") 
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-/* GET home page. */
 const connectDB = async () => {
   try {
     // Replace 'mongodb://localhost/phone_auth' with your MongoDB connection string
@@ -17,9 +15,4 @@ const connectDB = async () => {
   }
 };
 
-
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+module.exports = connectDB;
