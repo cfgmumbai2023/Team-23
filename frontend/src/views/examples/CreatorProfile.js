@@ -46,7 +46,6 @@ class CreatorProfile extends React.Component {
               <Card className="card-profile shadow mt--300">
                 <div className="px-4">
                   <Row className="justify-content-center">
-                    <Col className="order" lg="3">
                       <div className="card-profile-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
@@ -56,9 +55,9 @@ class CreatorProfile extends React.Component {
                           />
                         </a>
                       </div>
-                    </Col>
+                    
                   </Row>
-                  <Row>
+                  <Row className="mt-5 py-5 justify-content-center">
                     <div className="text-center mt-5">
                       <h3>
                         Jessica Jones{" "}
@@ -78,7 +77,7 @@ class CreatorProfile extends React.Component {
                       </div>
                     </div>
                   </Row>
-                  <div className="mt-5 py-5 border-top text-center">
+                  <div className="mt-1 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
@@ -89,6 +88,9 @@ class CreatorProfile extends React.Component {
                           structure. An artist of considerable range.
                         </p>
                       </Col>
+                    </Row>
+                    <Row className="border-top justify-content-center">
+                      <h3>Upload a video!</h3>
                     </Row>
                     <Row className="justify-content-center">
                       <form>

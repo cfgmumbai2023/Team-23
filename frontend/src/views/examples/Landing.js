@@ -1,23 +1,27 @@
 import React from "react";
 
-import classnames from "classnames";
-
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
 import {
-  Button,
   Card,
   CardBody,
   Container,
   Row,
   Col,
+  Button,
+  CardHeader,
+  FormGroup,
+  Form,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
 } from "reactstrap";
 
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
-import Login from "./Login";
 
 class Landing extends React.Component {
   state = {};
@@ -67,6 +71,8 @@ class Landing extends React.Component {
   };
 
   render() {
+
+    
     return (
       <>
         <DemoNavbar />
@@ -110,15 +116,13 @@ class Landing extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid">
                     <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
+                      <Card className="card-lift--hover shadow border-0 text-center">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
+                            <i className="fa fa-user" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
-                            Admin
-                          </h6>
-                          
+                          <h6 className="text-primary text-uppercase">Admin</h6>
+
                           <Button
                             className="mt-4"
                             color="primary"
@@ -134,14 +138,129 @@ class Landing extends React.Component {
                         onClose={this.hideModal1}
                         center
                       >
-                        <Login />
+                        <Card className="bg-secondary shadow border-0">
+                          <CardHeader className="bg-white pb-5">
+                            <div className="text-muted text-center mb-3">
+                              <small>Sign in with</small>
+                            </div>
+                            <div className="btn-wrapper text-center">
+                              <Button
+                                className="btn-neutral btn-icon"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/github.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Github</span>
+                              </Button>
+                              <Button
+                                className="btn-neutral btn-icon ml-1"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/google.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Google</span>
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <CardBody className="px-lg-5 py-lg-5">
+                            <div className="text-center text-muted mb-4">
+                              <small>Or sign in with credentials</small>
+                            </div>
+                            <Form role="form">
+                              <FormGroup className="mb-3">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-email-83" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input placeholder="Email" type="email" />
+                                </InputGroup>
+                              </FormGroup>
+                              <FormGroup>
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input
+                                    placeholder="Password"
+                                    type="password"
+                                    autoComplete="off"
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input
+                                  className="custom-control-input"
+                                  id=" customCheckLogin"
+                                  type="checkbox"
+                                />
+                                <label
+                                  className="custom-control-label"
+                                  htmlFor=" customCheckLogin"
+                                >
+                                  <span>Remember me</span>
+                                </label>
+                              </div>
+                              <div className="text-center">
+                                <Button
+                                  className="my-4"
+                                  color="primary"
+                                  type="button"
+                                >
+                                  Sign in
+                                </Button>
+                              </div>
+                            </Form>
+                          </CardBody>
+                        </Card>
+                        <Row className="mt-3">
+                          <Col xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Forgot password?</small>
+                            </a>
+                          </Col>
+                          <Col className="text-right" xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Create new account</small>
+                            </a>
+                          </Col>
+                        </Row>
                       </Modal>
                     </Col>
                     <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
+                      <Card className="card-lift--hover shadow border-0 text-center">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                            <i className="ni ni-istanbul" />
+                            <i className="fa fa-book" />
                           </div>
                           <h6 className="text-success text-uppercase">
                             Learner
@@ -161,47 +280,130 @@ class Landing extends React.Component {
                         onClose={this.hideModal2}
                         center
                       >
-                        <form>
-                          <div className="form-group">
-                            <label for="Name">Email</label>
-                            <input
-                              type="email"
-                              className="form-control"
-                              id="Email"
-                              placeholder="your name"
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label for="Subject">Subject</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="class"
-                              placeholder="Subject"
-                            />
-                          </div>
-
-                          <div className="form-group">
-                            <label for="language">Language</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="School"
-                              placeholder="language"
-                            />
-                          </div>
-
-                          <button type="submit" className="btn btn-primary">
-                            Create Video
-                          </button>
-                        </form>
+                        <Card className="bg-secondary shadow border-0">
+                          <CardHeader className="bg-white pb-5">
+                            <div className="text-muted text-center mb-3">
+                              <small>Sign in with</small>
+                            </div>
+                            <div className="btn-wrapper text-center">
+                              <Button
+                                className="btn-neutral btn-icon"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/github.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Github</span>
+                              </Button>
+                              <Button
+                                className="btn-neutral btn-icon ml-1"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/google.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Google</span>
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <CardBody className="px-lg-5 py-lg-5">
+                            <div className="text-center text-muted mb-4">
+                              <small>Or sign in with credentials</small>
+                            </div>
+                            <Form role="form">
+                              <FormGroup className="mb-3">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-email-83" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input placeholder="Email" type="email" />
+                                </InputGroup>
+                              </FormGroup>
+                              <FormGroup>
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input
+                                    placeholder="Password"
+                                    type="password"
+                                    autoComplete="off"
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input
+                                  className="custom-control-input"
+                                  id=" customCheckLogin"
+                                  type="checkbox"
+                                />
+                                <label
+                                  className="custom-control-label"
+                                  htmlFor=" customCheckLogin"
+                                >
+                                  <span>Remember me</span>
+                                </label>
+                              </div>
+                              <div className="text-center">
+                                <Button
+                                  className="my-4"
+                                  color="primary"
+                                  type="button"
+                                  href="learner-profile"
+                                >
+                                  Sign in
+                                </Button>
+                              </div>
+                            </Form>
+                          </CardBody>
+                        </Card>
+                        <Row className="mt-3">
+                          <Col xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Forgot password?</small>
+                            </a>
+                          </Col>
+                          <Col className="text-right" xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Create new account</small>
+                            </a>
+                          </Col>
+                        </Row>
                       </Modal>
                     </Col>
                     <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
+                      <Card className="card-lift--hover shadow border-0 text-center">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="ni ni-planet" />
+                            <i className="fa fa-plus" />
                           </div>
                           <h6 className="text-warning text-uppercase">
                             Creator
@@ -221,41 +423,123 @@ class Landing extends React.Component {
                         onClose={this.hideModal3}
                         center
                       >
-                        <form>
-                          <div className="form-group">
-                            <label for="Name">Name</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="Name"
-                              placeholder="your name"
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label for="Subject">Subject</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="class"
-                              placeholder="Subject"
-                            />
-                          </div>
-
-                          <div className="form-group">
-                            <label for="language">Language</label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="School"
-                              placeholder="language"
-                            />
-                          </div>
-
-                          <button type="submit" className="btn btn-primary">
-                            Create Video
-                          </button>
-                        </form>
-                        {/* <h2>Simple centered modal</h2> */}
+                        <Card className="bg-secondary shadow border-0">
+                          <CardHeader className="bg-white pb-5">
+                            <div className="text-muted text-center mb-3">
+                              <small>Sign in with</small>
+                            </div>
+                            <div className="btn-wrapper text-center">
+                              <Button
+                                className="btn-neutral btn-icon"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/github.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Github</span>
+                              </Button>
+                              <Button
+                                className="btn-neutral btn-icon ml-1"
+                                color="default"
+                                href="#pablo"
+                                onClick={(e) => e.preventDefault()}
+                              >
+                                <span className="btn-inner--icon mr-1">
+                                  <img
+                                    alt="..."
+                                    src={
+                                      require("assets/img/icons/common/google.svg")
+                                        .default
+                                    }
+                                  />
+                                </span>
+                                <span className="btn-inner--text">Google</span>
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <CardBody className="px-lg-5 py-lg-5">
+                            <div className="text-center text-muted mb-4">
+                              <small>Or sign in with credentials</small>
+                            </div>
+                            <Form role="form">
+                              <FormGroup className="mb-3">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-email-83" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input placeholder="Email" type="email" />
+                                </InputGroup>
+                              </FormGroup>
+                              <FormGroup>
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+                                  <Input
+                                    placeholder="Password"
+                                    type="password"
+                                    autoComplete="off"
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input
+                                  className="custom-control-input"
+                                  id=" customCheckLogin"
+                                  type="checkbox"
+                                />
+                                <label
+                                  className="custom-control-label"
+                                  htmlFor=" customCheckLogin"
+                                >
+                                  <span>Remember me</span>
+                                </label>
+                              </div>
+                              <div className="text-center">
+                                <Button
+                                  className="my-4"
+                                  color="primary"
+                                  type="button"
+                                  href="creator-profile"
+                                >
+                                  Sign in
+                                </Button>
+                              </div>
+                            </Form>
+                          </CardBody>
+                        </Card>
+                        <Row className="mt-3">
+                          <Col xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Forgot password?</small>
+                            </a>
+                          </Col>
+                          <Col className="text-right" xs="6">
+                            <a
+                              className="text-light"
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              <small>Create new account</small>
+                            </a>
+                          </Col>
+                        </Row>
                       </Modal>
                     </Col>
                   </Row>
@@ -263,7 +547,6 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          
         </main>
         <CardsFooter />
       </>
@@ -272,3 +555,4 @@ class Landing extends React.Component {
 }
 
 export default Landing;
+//I want the login button to redirect me to the creator profile?
