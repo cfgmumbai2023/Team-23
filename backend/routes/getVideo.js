@@ -13,9 +13,9 @@ router.use(
   })
 );
 
-mongoose.connect(
-  "mongodb+srv://cfg1:XHZefcwjgNF0CKRK@cluster0.d6uhqlp.mongodb.net/?retryWrites=true&w=majority"
-);
+// mongoose.connect(
+//   "mongodb+srv://cfg1:XHZefcwjgNF0CKRK@cluster0.d6uhqlp.mongodb.net/?retryWrites=true&w=majority"
+// );
 
 const usetube = require("usetube");
 
