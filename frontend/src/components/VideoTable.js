@@ -36,7 +36,7 @@ const VideoTable = ({ videos }) => {
               <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{video.title}</td>
-                <td>physics</td>
+                <td>geography</td>
                 <td
                   style={{ cursor: "pointer" }}
                   onClick={() => {
@@ -54,7 +54,7 @@ const VideoTable = ({ videos }) => {
             <iframe
               width={600}
               height={600}
-              src={`${link}`}
+              src="https://www.youtube.com/embed/VACrYqfB1WU"
               frameborder="0"
               allow="autoplay; encrypted-media"
               allowfullscreen
