@@ -25,12 +25,19 @@ router.post("/", async function (req, res, next) {
     console.log(searchInput)
     const data = await usetube.getChannelVideos(searchInput);
     const url1 = "https://www.youtube.com/watch?v=";
+    const response = [];
     for (let i = 0; i < 10; i++) {
       const url2 = data[i].id;
       const finalUrl = url1 + url2;
-      console.log(finalUrl);
+      const title = data[i].original_title;
+      const obj = {
+        title : title,
+        finalUrl : finalUrl
+      }
+      console.log(obj);
+      response.push(obj)
     }
-    res.status(200).json(data);
+    res.status(200).json(response);
   } catch (e) {
     res.status(422).json(e);
   }
