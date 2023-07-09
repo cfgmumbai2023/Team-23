@@ -60,16 +60,16 @@ class CreatorProfile extends React.Component {
                   <Row className="mt-5 py-5 justify-content-center">
                     <div className="text-center mt-5">
                       <h3>
-                        Jessica Jones{" "}
+                        Sunita{" "}
                         <span className="font-weight-light">, 27</span>
                       </h3>
                       <div className="h6 font-weight-300">
                         <i className="ni location_pin mr-2" />
-                        Bucharest, Romania
+                     Mumbai,  India
                       </div>
                       <div className="h6 mt-4">
                         <i className="ni business_briefcase-24 mr-2" />
-                        Solution Manager - Creative Tim Officer
+                      Can teach Maths and Science
                       </div>
                       <div>
                         <i className="ni education_hat mr-2" />
@@ -81,11 +81,7 @@ class CreatorProfile extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
+                        Teacher at ABC School,Mumbai
                         </p>
                       </Col>
                     </Row>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MultilingualSelector from "components/MultilingualSelector";
 
 import Headroom from "headroom.js";
 
@@ -50,7 +51,9 @@ class DemoNavbar extends React.Component {
             className="navbar-main navbar-transparent navbar-light headroom"
             expand="lg"
             id="navbar-main"
+            
           >
+            <MultilingualSelector/>
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
@@ -101,7 +104,7 @@ class DemoNavbar extends React.Component {
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
-                  <UncontrolledDropdown nav>
+                  {/* <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Languages</span>
@@ -129,7 +132,7 @@ class DemoNavbar extends React.Component {
                         English
                       </DropdownItem>
                     </DropdownMenu>
-                  </UncontrolledDropdown>
+                  </UncontrolledDropdown> */}
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
