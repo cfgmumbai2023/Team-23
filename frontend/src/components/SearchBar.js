@@ -2,18 +2,23 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-const SearchBar = () => {
+const SearchBar = ({setVideos}) => {
   const [searchInput, setSearchInput] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const dataObj = {
       searchInput: searchInput
     }
-    axios.post("http://localhost:4000/getVideo", dataObj).then(() => {
+    axios.post("http://localhost:4000/getVideo", dataObj).then((res) => {
       console.log(dataObj);
       setSearchInput("");
+      // console.log(res.data);
+      setVideos({videos:res.data})
     });
+
+   
   };
 
   return (
