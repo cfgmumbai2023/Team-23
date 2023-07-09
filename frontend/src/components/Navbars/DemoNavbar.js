@@ -142,7 +142,7 @@ class DemoNavbar extends React.Component {
                       type="button"
                       href="tel:+4444488888"
                     >
-                      Call Us
+                      No School? Call Us
                     </Button>
                   </NavItem>
                   <NavItem>
