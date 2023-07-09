@@ -54,6 +54,7 @@
     "moment": "2.29.4",
     "nouislider": "15.4.0",
     "react": "18.0.0",
+    "react-apexcharts": "^1.4.0",
     "react-datetime": "3.2.0",
     "react-dom": "18.0.0",
     "react-responsive-modal": "^6.4.2",
@@ -62,7 +63,6 @@
     "reactstrap": "8.10.0",
     "sass": "1.62.1"
   },
-
   "devDependencies": {
     "@types/markerclustererplus": "2.1.33",
     "@types/react": "18.2.6",

@@ -1,9 +1,13 @@
 import React from "react";
 
-import { Card, Container, Row, Col } from "reactstrap";
+import { Card, Container, Row, Col,Component } from "reactstrap";
 
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
+import Chart from 'react-apexcharts';
+import Dash from "./dashboard.js";
+
+
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -11,6 +15,8 @@ class Profile extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+  
   render() {
     return (
       <>
@@ -47,8 +53,7 @@ class Profile extends React.Component {
             <Container>
               <Card className="card-profile shadow mt--300">
                 <div className="px-4">
-                  <Row className="justify-content-center">
-                    <Col className="order-lg-2" lg="3">
+                <Row className="justify-content-center">
                       <div className="card-profile-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <img
@@ -58,9 +63,9 @@ class Profile extends React.Component {
                           />
                         </a>
                       </div>
-                    </Col>
+                    
                   </Row>
-                  <Row>
+                  <Row className="mt-5 py-5 justify-content-center">
                     <div className="text-center mt-5">
                       <h3>
                         Jessica Jones{" "}
@@ -80,7 +85,7 @@ class Profile extends React.Component {
                       </div>
                     </div>
                   </Row>
-                  <div className="mt-5 py-5 border-top text-center">
+                  <div className="mt-1 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
@@ -92,9 +97,10 @@ class Profile extends React.Component {
                         </p>
                       </Col>
                     </Row>
-                    <Row className="justify-content-center">
-                      Area for graph
+                    <Row className=" border-top p-5 justify-content-center">
+                      <Dash/>
                     </Row>
+                    
                   </div>
                 </div>
               </Card>
@@ -102,6 +108,7 @@ class Profile extends React.Component {
           </section>
         </main>
         <CardsFooter />
+        
       </>
     );
   }
